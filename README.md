@@ -3,7 +3,12 @@
 ## export int8 engine
 python utils/convert_trt_quant.py --calib= --onnx=
 
-## int8 model infer
+
+
+## int8 model infer(python)
+python src/infer.py 
+
+## int8 model infer(c++)
 mkdir build
 cd build
 cmake ..
