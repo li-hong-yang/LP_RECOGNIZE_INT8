@@ -1,0 +1,1 @@
+/home/TensorRT-7.0.0.11/targets/x86_64-linux-gnu/bin/trtexec --onnx=CRNN.onnx --batch=1 --saveEngine=CRNN.engine
