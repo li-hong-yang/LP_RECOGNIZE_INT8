@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-project(LP_CORNER_DETECT)
+project(LP_RECOGNIZE_INT8)
 
 option(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
 set(CMAKE_CXX_STANDARD 11)
@@ -28,11 +28,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC -Wall -Ofast -Wfatal-er
 file(GLOB_RECURSE CPP_FILE src/*.cpp) # 搜索出所有后缀名为".cpp"的文件
 
 file(GLOB SRC_CPP src/*.cpp)
-add_library(myplugins SHARED ${SRC_CPP})
+# add_library(myplugins SHARED ${SRC_CPP})
 # aux_source_directory(src SRC_LIST)
-file(GLOB SRC_CU src/*.cu)
+# file(GLOB SRC_CU src/*.cu)
 
-CUDA_ADD_EXECUTABLE(lp_corner_detect ${SRC_CU})
+# CUDA_ADD_EXECUTABLE(lp_corner_detect ${SRC_CU})
 
-# add_executable(lp_corner_detect ${SRC_CPP})
-target_link_libraries(lp_corner_detect nvinfer cudart ${OpenCV_LIBS} myplugins)
+add_executable(lp_recognize ${SRC_CPP})
+target_link_libraries(lp_recognize nvinfer cudart ${OpenCV_LIBS})
