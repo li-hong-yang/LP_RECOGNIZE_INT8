@@ -162,10 +162,10 @@ LpRecognize::~LpRecognize()
 
 
 
-int main()
+int main(int argc, char** argv)
 {
-    string name = "../data/0.jpg"; 
-    LpRecognize pred("../models_save/lp_int8.trt");                   
+    string name = argv[1]; 
+    LpRecognize pred("../models_save/ATT_LP_RECGNIZE.engine");                   
     pred.preprocess(name);  
     pred.infer();
     pred.postprocess();                
